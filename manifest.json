@@ -1,11 +1,17 @@
 {
   "name": "Capital Pizza",
-  "short_name": "Pizza",
+  "short_name": "Capital Pizza",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
+  "description": "Capital Pizza Rzeszów — najlepsza pizza w mieście! Zamów online lub odwiedź nas przy Monte Cassino 14.",
   "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
     {
       "src": "icon.png",
       "sizes": "512x512",
