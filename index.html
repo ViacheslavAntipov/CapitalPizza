@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Capital Pizza – Menu</title>
+<style>
+body {
+  margin: 0;
+  font-family: Bahnschrift, sans-serif;
+  background: #fff;
+  color: #000;
+}
+
+/* ===== HEADER ===== */
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 30px;
+  border-bottom: 2px solid #000;
+  z-index: 1000;
+  transition: all 0.4s ease;
+}
+header.compact {
+  padding: 10px 15px;
+}
+header.compact h1,
+header.compact .header-info {
+  opacity: 0;
+  height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+header h1 {
+  font-weight: 700;
+  font-size: 30px;
+  margin: 0 0 10px 0;
+}
+.header-info {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+.header-buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.header-button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+.header-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== CATEGORY ===== */
+section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  box-sizing: border-box;
+}
+.category-section {
+  margin-bottom: 60px;
+}
+.category-header {
+  position: sticky;
+  background: #fff;
+  z-index: 999;
+  display: grid;
+  grid-template-columns: 1fr 110px 110px 110px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-bottom: 2px solid #000;
+  transition: box-shadow 0.3s ease;
+}
+.category-header.sticky-shadow {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.category-title {
+  font-size: 26px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.category-sizes {
+  display: contents;
+}
+.category-sizes span {
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ===== MENU ITEMS ===== */
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr 110px 110px 110px;
+  align-items: center;
+  border: 2px solid #000;
+  border-radius: 4px;
+  padding: 10px;
+  background: #fff;
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+.menu-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.menu-item:hover {
+  background: #000;
+  color: #fff;
+}
+.menu-info h3 {
+  margin: 0;
+  font-weight: 700;
+}
+.menu-info p {
+  margin: 5px 0 0;
+  font-size: 14px;
+}
+.price-box {
+  border: 2px solid #000;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  background: #fff;
+  color: #000;
+  width: 100%;
+  box-sizing: border-box;
+}
+.price-box.single,
+.price-box.wide {
+  grid-column: 2 / span 3;
+}
+
+/* ===== PIEROGI ===== */
+.pierogi .menu-item {
+  display: grid;
+  grid-template-columns: 1fr 110px 110px 110px;
+  align-items: center;
+}
+.pierogi .price-box:nth-child(2) {
+  grid-column: 2 / 3;
+}
+.pierogi .price-box:nth-child(3) {
+  grid-column: 3 / 4;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+  .category-header {
+    grid-template-columns: 1fr;
+    text-align: center;
+    background: rgba(255,255,255,0.97);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+  .category-sizes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    width: 100%;
+    gap: 5px;
+    margin-top: 4px;
+  }
+  .menu-item {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 6px;
+    justify-items: start;
+    text-align: left;
+  }
+  .menu-info {
+    grid-column: 1 / -1;
+  }
+  .price-box {
+    width: 100%;
+  }
+  .price-box.single,
+  .price-box.wide {
+    grid-column: 1 / -1;
+  }
+
+  .pierogi .menu-item {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pierogi .price-box:nth-child(2),
+  .pierogi .price-box:nth-child(3) {
+    grid-column: span 1;
+  }
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  font-size: 22px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 2000;
+}
+#scrollTopBtn.show {
+  opacity: 1;
+  visibility: visible;
+}
+#scrollTopBtn:hover {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 14px;
+  border-top: 3px solid #000;
+}
+footer p {
+  margin: 0;
+  font-weight: 500;
+}
+</style>
+</head>
+
+<body>
+<header id="main-header">
+  <h1>Capital Pizza</h1>
+  <div class="header-info">
+    🕒 <strong>Poniedziałek – Niedziela:</strong> 12:00 – 22:00<br />
+    📍 <strong>Rzeszów, ul. Monte Cassino 14</strong>
+  </div>
+  <div class="header-buttons">
+    <a href="https://capitalpizza.ordersmart.pl/1945/" class="header-button" target="_blank">Zamów Online</a>
+    <a href="https://maps.app.goo.gl/Uv5ZZWxGe4RbPmTh8" class="header-button" target="_blank">Nawiguj</a>
+  </div>
+</header>
+
+<!-- ===================== PIZZA ===================== -->
+<section class="category-section" id="pizza">
+  <div class="category-header">
+    <div class="category-title">Pizza</div>
+    <div class="category-sizes">
+      <span>Mała<br><small>(25cm)</small></span>
+      <span>Średnia<br><small>(30cm)</small></span>
+      <span>Familijna<br><small>(40cm)</small></span>
+    </div>
+  </div>
+
+  <div class="menu-grid">
+    <!-- 22 pozycje pizzy -->
+    <div class="menu-item"><div class="menu-info"><h3>1. Capital</h3><p>Sos pomidorowy, ser, mozzarella, salami, szynka, pieczarki, kukurydza, oliwki, cebula, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">52 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Margherita</h3><p>Sos pomidorowy, ser mozzarella, oregano</p></div><div class="price-box">34 zł</div><div class="price-box">46 zł</div><div class="price-box">67 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>3. Chicken</h3><p>Sos pomidorowy, ser mozzarella, kurczak, pieczarki, cebula, kukurydza, oregano</p></div><div class="price-box">41 zł</div><div class="price-box">53 zł</div><div class="price-box">77 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>4. Studencka</h3><p>Sos pomidorowy, ser mozzarella, pieczarki, papryka, cebula, oliwki, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">52 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>5. Pulled Pork</h3><p>Sos pomidorowy, ser mozzarella, szarpana wieprzowina, jalapeno, cebula, kukurydza, nachosy, oregano</p></div><div class="price-box">41 zł</div><div class="price-box">53 zł</div><div class="price-box">77 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>6. Tropicana</h3><p>Sos pomidorowy, ser mozzarella, szynka, ananas, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">51 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>7. Salami</h3><p>Sos pomidorowy, ser mozzarella, salami x2, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">50 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>8. Pinokio</h3><p>Sos pomidorowy, ser mozzarella, szynka, kukurydza, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">49 zł</div><div class="price-box">74 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>9. Capriciosa</h3><p>Sos pomidorowy, ser mozzarella, szynka, pieczarki, papryka, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">49 zł</div><div class="price-box">74 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>10. Fantazja</h3><p>Sos pomidorowy, ser mozzarella, 5 dowolnych składników, oregano</p></div><div class="price-box">41 zł</div><div class="price-box">57 zł</div><div class="price-box">82 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>11. Diavolo</h3><p>Sos pomidorowy, ser mozzarella, salami, cebula, czosnek, jalapeno ostre, oregano</p></div><div class="price-box">39 zł</div><div class="price-box">52 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>12. Pietro</h3><p>Sos pomidorowy, ser mozzarella, salami, szynka, cebula, jalapeno ostre, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">53 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>13. Rybacka</h3><p>Sos pomidorowy, ser mozzarella, pieczarki, tuńczyk, cebula, czosnek, oliwki, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">53 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>14. Bacon</h3><p>Sos pomidorowy, ser mozzarella, bekon, cebula, czosnek, kapary, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">52 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>15. Farmerska</h3><p>Sos pomidorowy, ser mozzarella, kiełbasa, pieczarki, cebula, czosnek, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">52 zł</div><div class="price-box">75 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>16. Spinako</h3><p>Sos pomidorowy, ser mozzarella, szpinak, cebula, czosnek, pieczarki, oregano</p></div><div class="price-box">37 zł</div><div class="price-box">50 zł</div><div class="price-box">73 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>17. Cztery sery</h3><p>Sos pomidorowy, mozzarella, pleśniowy, favita, parmezan</p></div><div class="price-box">40 zł</div><div class="price-box">53 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>18. Bella</h3><p>Sos pomidorowy, ser mozzarella, pieczarki, szpinak, suszone pomidory, kurczak, favita, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">53 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>19. Francesco</h3><p>Sos biały, ser mozzarella, bekon, suszone pomidory, rukola, oregano</p></div><div class="price-box">40 zł</div><div class="price-box">52 zł</div><div class="price-box">76 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>20. Sweet Chicken</h3><p>Sos pomidorowy, ser mozzarella, kurczak, ananas, kukurydza, papryka, oregano</p></div><div class="price-box">41 zł</div><div class="price-box">55 zł</div><div class="price-box">77 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>21. Wiking</h3><p>Sos pomidorowy, ser mozzarella, bekon, salami, kukurydza, frytki zapiekane podwójnym serem mozzarella, oregano</p></div><div class="price-box">50 zł</div><div class="price-box">66 zł</div><div class="price-box">91 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>22. Parma</h3><p>Sos pomidorowy, ser mozzarella, szynka parmeńska, parmezan, pomidorki koktajlowe, rukola, oregano</p></div><div class="price-box">47 zł</div><div class="price-box">60 zł</div><div class="price-box">86 zł</div></div>
+  </div>
+</section>
+<!-- ===================== DODATKI DO PIZZY ===================== -->
+<section class="category-section pizza-addons">
+  <div class="category-header sticky">
+    <h2 class="category-title">DODATKI DO PIZZY</h2>
+    <div class="category-sizes">
+      <div>Mała<br><span>(25cm)</span></div>
+      <div>Średnia<br><span>(30cm)</span></div>
+      <div>Familijna<br><span>(40cm)</span></div>
+    </div>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div class="menu-info">
+        <h3>Warzywa i dodatki roślinne</h3>
+        <p>* pieczarki, pomidor, cebula, czosnek, kukurydza, ananas, szpinak, papryczki jalapeno ostre, papryka, oliwki czarne, oliwki zielone, suszone pomidory, rukola</p>
+      </div>
+      <div class="price-box">2,00 zł</div>
+      <div class="price-box">3,00 zł</div>
+      <div class="price-box">4,00 zł</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-info">
+        <h3>Dodatki mięsne</h3>
+        <p>* szynka, kiełbasa, salami, kurczak, bekon, tuńczyk, szarpana wieprzowina</p>
+      </div>
+      <div class="price-box">3,00 zł</div>
+      <div class="price-box">4,00 zł</div>
+      <div class="price-box">5,00 zł</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-info">
+        <h3>Dodatki serowe i sosy</h3>
+        <p>* ser favita, ser pleśniowy, ser parmezan, zapiekany majonez, sos tabasco</p>
+      </div>
+      <div class="price-box">3,00 zł</div>
+      <div class="price-box">4,00 zł</div>
+      <div class="price-box">5,00 zł</div>
+    </div>
+
+    <div class="menu-item">
+      <div class="menu-info">
+        <h3>Dodatki premium</h3>
+        <p>* ser mozzarella</p>
+      </div>
+      <div class="price-box">5,00 zł</div>
+      <div class="price-box">6,00 zł</div>
+      <div class="price-box">7,00 zł</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ZESTAWY OBIADOWE ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Zestawy obiadowe</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Gyros</h3><p>Kawałki piersi z kurczaka, frytki lub opiekane cząstki ziemniaczane, mix świeżych warzyw, sos winegret, sos czosnkowy lub ketchup pikantny</p></div><div class="price-box single">38 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Frytki Szefuncia</h3><p>Frytki z posypką z kurczaka zapiekane serem mozzarella, świeże warzywa, ketchup pikantny lub sos czosnkowy</p></div><div class="price-box single">38 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>3. Frytki Szefowej</h3><p>Frytki z posypką z kurczaka, salami, bekonem zapiekane serem mozzarella, ketchup pikantny lub sos czosnkowy</p></div><div class="price-box single">38 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>4. Frytki z posypką mięsną</h3><p>Frytki z posypką z kurczaka, ketchup pikantny lub sos czosnkowy</p></div><div class="price-box single">30 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== BURGERY ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Burgery</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Burger z szarpaną wieprzowiną</h3><p>Bułka maślana z boczkiem, serem cheddar, sałatą lodową, piklami, czerwoną cebulką, sosem BBQ, majonezem, szarpana wieprzowina</p></div><div class="price-box single">38 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Zestaw Burger z szarpaną wieprzowiną</h3><p>Jak wyżej + frytki</p></div><div class="price-box single">48 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== SAŁATKI ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Sałatki</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Sałatka grecka</h3><p>Pomidor, ogórek, papryka, cebula, ser favita, oliwki, sałata lodowa, sos winegret</p></div><div class="price-box single">30 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Sałatka CAPITAL</h3><p>Kurczak, sałata lodowa, kukurydza, ogórek, papryka, pomidor, sos winegret</p></div><div class="price-box single">30 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== PIEROGI ===================== -->
+<section class="category-section pierogi">
+  <div class="category-header">
+    <div class="category-title">Pierogi</div>
+    <div class="category-sizes">
+      <span>Mała<br><small>(10 szt.)</small></span>
+      <span>Duża<br><small>(16 szt.)</small></span>
+      <span></span>
+    </div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div class="menu-info">
+        <h3>1. Pierogi ruskie</h3>
+      </div>
+      <div class="price-box wide">18 zł</div>
+      <div class="price-box wide">26 zł</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===================== DODATKI ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Dodatki</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Frytki</h3></div><div class="price-box single">12 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Opiekane cząstki ziemniaczane</h3></div><div class="price-box single">14 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>3. Bułeczka czosnkowa</h3></div><div class="price-box single">2 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>4. Opakowanie (pizza, frytki, ziemniaczki, zestawy, sałatki, pierogi)</h3></div><div class="price-box single">2 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== SOSY I OLIWA ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Sosy i oliwa</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Sos czosnkowy</h3></div><div class="price-box single">2 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Ketchup pikantny</h3></div><div class="price-box single">2 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>3. Ostry Sos Piri Piri</h3></div><div class="price-box single">3 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>4. Zabójczy Sos Szefa</h3><p><small>Bardzo ostry!</small></p></div><div class="price-box single">4 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>5. Oliwa z oliwek 50 ml</h3><p><small>Extra virgin</small></p></div><div class="price-box single">6 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>6. Oliwa z oliwek 80 ml</h3><p><small>Extra virgin</small></p></div><div class="price-box single">7 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>7. Sos barbecue</h3></div><div class="price-box single">3 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== PIWA BEZALKOHOLOWE ===================== -->
+<section class="category-section">
+  <div class="category-header">
+    <div class="category-title">Piwa bezalkoholowe</div>
+    <div class="category-sizes"><span></span><span></span><span></span></div>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="menu-info"><h3>1. Żywiec variant białe 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>2. Żywiec miętaż 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>3. Żywiec jabłko 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>4. Żywiec lemonż 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>5. Żywiec malinaż 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>6. Żywiec lipa & pigwa 0,0%</h3></div><div class="price-box single">10,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>7. Żywiec Jasne Pełne 0,0%</h3></div><div class="price-box single">9,50 zł</div></div>
+    <div class="menu-item"><div class="menu-info"><h3>8. Heineken bezalkoholowy 0%</h3></div><div class="price-box single">9,50 zł</div></div>
+  </div>
+</section>
+
+<!-- ===================== NAPOJE ZIMNE ===================== -->
+<section class="category-section">
+  ...
+</section>
+
+<footer>
+  <p>© 2025 Capital Pizza – Wszystkie prawa są zastrzeżone.</p>
+</footer>
+
+<script>
+const headers = document.querySelectorAll('.category-header');
+window.addEventListener('scroll', () => {
+  headers.forEach(h => {
+    const rect = h.getBoundingClientRect();
+    if (rect.top <= 120 && rect.bottom > 0) h.classList.add('sticky-shadow');
+    else h.classList.remove('sticky-shadow');
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+},{threshold:0.1});
+document.querySelectorAll('.menu-item').forEach(i=>observer.observe(i));
+
+const header = document.getElementById('main-header');
+const catHeaders = document.querySelectorAll('.category-header');
+function updateHeaderTop(){
+  const hH = header.offsetHeight;
+  catHeaders.forEach(ch=>ch.style.top=hH+'px');
+}
+updateHeaderTop();
+window.addEventListener('resize',updateHeaderTop);
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>100) header.classList.add('compact');
+  else header.classList.remove('compact');
+  updateHeaderTop();
+});
+
+const topBtn=document.createElement('button');
+topBtn.id='scrollTopBtn';
+topBtn.innerText='↑';
+document.body.appendChild(topBtn);
+window.addEventListener('scroll',()=>{
+  if(window.scrollY>300) topBtn.classList.add('show');
+  else topBtn.classList.remove('show');
+});
+topBtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
