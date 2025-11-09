@@ -1,0 +1,205 @@
+/* ================================
+   Capital Pizza Admin v5.0
+   Stylizacja panelu
+   ================================ */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Bahnschrift', sans-serif;
+}
+
+body {
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.5;
+}
+
+/* ===== HEADER ===== */
+.admin-header {
+  background: #000;
+  color: #fff;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* ===== MAIN LAYOUT ===== */
+.admin-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 20px;
+}
+
+.categories-panel, .edit-panel {
+  background: #f9f9f9;
+  border: 1px solid #e2e2e2;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.categories-panel {
+  width: 30%;
+  min-width: 260px;
+}
+
+.edit-panel {
+  flex: 1;
+}
+
+/* ===== KATEGORIE ===== */
+.categories-panel h2,
+.edit-panel h2 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+
+#categoryList {
+  list-style: none;
+}
+
+#categoryList li {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background: #fff;
+  transition: background 0.3s;
+}
+
+#categoryList li:hover {
+  background: #000;
+  color: #fff;
+}
+
+#categoryList li.active {
+  background: #000;
+  color: #fff;
+}
+
+/* ===== FORMULARZ EDYCJI ===== */
+#editFormContainer {
+  margin-bottom: 15px;
+}
+
+.edit-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+}
+
+.edit-item input,
+.edit-item textarea {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.edit-item label {
+  font-weight: bold;
+  display: block;
+  margin-top: 5px;
+}
+
+.edit-item button {
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 8px;
+  transition: all 0.3s ease;
+}
+
+.edit-item button:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+.primary-btn {
+  background: #000;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* ===== FOOTER / STATUS BAR ===== */
+.admin-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===== SCROLL TO TOP ===== */
+#scrollTopBtn {
+  position: fixed;
+  bottom: 70px;
+  right: 25px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: none;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+#scrollTopBtn:hover {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+
+/* ===== RESPONSYWNOŚĆ ===== */
+@media (max-width: 900px) {
+  .admin-container {
+    flex-direction: column;
+  }
+  .categories-panel, .edit-panel {
+    width: 100%;
+  }
+}

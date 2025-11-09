@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capital Pizza Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Nagłówek -->
+  <header class="admin-header">
+    <h1>🍕 Capital Pizza Admin</h1>
+  </header>
+
+  <!-- Główna sekcja adminki -->
+  <main class="admin-container">
+
+    <!-- Lewy panel: lista kategorii -->
+    <section class="categories-panel">
+      <h2>Kategorie</h2>
+      <ul id="categoryList"></ul>
+    </section>
+
+    <!-- Prawy panel: edycja pozycji -->
+    <section class="edit-panel">
+      <h2>Edycja pozycji</h2>
+
+      <div id="editFormContainer">
+        <p>Wybierz kategorię, aby zobaczyć i edytować pozycje menu.</p>
+      </div>
+
+      <button id="addNewItem" class="primary-btn">+ Dodaj pozycję</button>
+    </section>
+  </main>
+
+  <!-- Dolny pasek statusu -->
+  <footer class="admin-footer">
+    <span id="statusMessage">💤 Panel gotowy do pracy...</span>
+  </footer>
+
+  <!-- Przycisk scroll-to-top -->
+  <button id="scrollTopBtn" title="Do góry">↑</button>
+
+  <!-- Skrypt JS -->
+  <script src="admin.js"></script>
+
+</body>
+</html>
