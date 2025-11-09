@@ -110,226 +110,226 @@
       "skladniki": "Sos pomidorowy, ser mozzarella, szynka parmeńska, parmezan, pomidorki koktajlowe, rukola, oregano",
       "ceny": ["47 zł", "60 zł", "86 zł"]
     }
+  ],
+
+  "dodatki_do_pizzy": [
+    {
+      "kategoria": "Warzywa i dodatki roślinne",
+      "skladniki": "* pieczarki, pomidor, cebula, czosnek, kukurydza, ananas, szpinak, papryczki jalapeno ostre, papryka, oliwki czarne, oliwki zielone, suszone pomidory, rukola",
+      "ceny": ["2,00 zł", "3,00 zł", "4,00 zł"]
+    },
+    {
+      "kategoria": "Dodatki mięsne",
+      "skladniki": "* szynka, kiełbasa, salami, kurczak, bekon, tuńczyk, szarpana wieprzowina",
+      "ceny": ["3,00 zł", "4,00 zł", "5,00 zł"]
+    },
+    {
+      "kategoria": "Dodatki serowe i sosy",
+      "skladniki": "* ser favita, ser pleśniowy, ser parmezan, zapiekany majonez, sos tabasco",
+      "ceny": ["3,00 zł", "4,00 zł", "5,00 zł"]
+    },
+    {
+      "kategoria": "Dodatki premium",
+      "skladniki": "* ser mozzarella",
+      "ceny": ["5,00 zł", "6,00 zł", "7,00 zł"]
+    }
+  ],
+
+  "zestawy_obiadowe": [
+    {
+      "nazwa": "Gyros",
+      "skladniki": "Kawałki piersi z kurczaka, frytki lub opiekane cząstki ziemniaczane, mix świeżych warzyw, sos winegret, sos czosnkowy lub ketchup pikantny",
+      "ceny": ["38,00 zł"]
+    },
+    {
+      "nazwa": "Frytki Szefuncia",
+      "skladniki": "Frytki z posypką z kurczaka zapiekane serem mozzarella, świeże warzywa, ketchup pikantny lub sos czosnkowy",
+      "ceny": ["38,00 zł"]
+    },
+    {
+      "nazwa": "Frytki Szefowej",
+      "skladniki": "Frytki z posypką z kurczaka, salami, bekonem zapiekane serem mozzarella, ketchup pikantny lub sos czosnkowy",
+      "ceny": ["38,00 zł"]
+    },
+    {
+      "nazwa": "Frytki z posypką mięsną",
+      "skladniki": "Frytki z posypką z kurczaka, ketchup pikantny lub sos czosnkowy",
+      "ceny": ["30,00 zł"]
+    }
+  ],
+
+  "burgery": [
+    {
+      "nazwa": "Burger z szarpaną wieprzowiną",
+      "skladniki": "Bułka maślana z boczkiem, serem cheddar, sałatą lodową, piklami, czerwoną cebulką, sosem BBQ, majonezem, szarpana wieprzowina",
+      "ceny": ["38,00 zł"]
+    },
+    {
+      "nazwa": "Zestaw Burger z szarpaną wieprzowiną",
+      "skladniki": "Jak wyżej + frytki",
+      "ceny": ["48,00 zł"]
+    }
+  ],
+
+  "salatki": [
+    {
+      "nazwa": "Sałatka grecka",
+      "skladniki": "Pomidor, ogórek, papryka, cebula, ser favita, oliwki, sałata lodowa, sos winegret",
+      "ceny": ["30,00 zł"]
+    },
+    {
+      "nazwa": "Sałatka CAPITAL",
+      "skladniki": "Kurczak, sałata lodowa, kukurydza, ogórek, papryka, pomidor, sos winegret",
+      "ceny": ["30,00 zł"]
+    }
+  ],
+
+  "pierogi": [
+    {
+      "nazwa": "Pierogi ruskie",
+      "rozmiary": ["Porcja mała (10 szt.)", "Porcja duża (16 szt.)"],
+      "ceny": ["18,00 zł", "26,00 zł"]
+    }
+  ],
+
+  "dodatki": [
+    {
+      "nazwa": "Frytki",
+      "ceny": ["12,00 zł"]
+    },
+    {
+      "nazwa": "Opiekane cząstki ziemniaczane",
+      "ceny": ["14,00 zł"]
+    },
+    {
+      "nazwa": "Bułeczka czosnkowa",
+      "ceny": ["2,00 zł"]
+    },
+    {
+      "nazwa": "Opakowanie (pizza, frytki, ziemniaczki, zestawy obiadowe, sałatki, pierogi)",
+      "ceny": ["2,00 zł"]
+    }
+  ],
+
+  "sosy_i_oliwa": [
+    {
+      "nazwa": "Sos czosnkowy",
+      "ceny": ["2,00 zł"]
+    },
+    {
+      "nazwa": "Ketchup pikantny",
+      "ceny": ["2,00 zł"]
+    },
+    {
+      "nazwa": "Ostry Sos Piri Piri",
+      "ceny": ["3,00 zł"]
+    },
+    {
+      "nazwa": "Zabójczy Sos Szefa",
+      "ceny": ["4,00 zł"],
+      "uwagi": "Bardzo ostry!"
+    },
+    {
+      "nazwa": "Oliwa z oliwek 50 ml",
+      "ceny": ["6,00 zł"],
+      "uwagi": "Extra virgin"
+    },
+    {
+      "nazwa": "Oliwa z oliwek 80 ml",
+      "ceny": ["7,00 zł"],
+      "uwagi": "Extra virgin"
+    },
+    {
+      "nazwa": "Sos barbecue",
+      "ceny": ["3,00 zł"]
+    }
+  ],
+
+  "piwa_bezalkoholowe": [
+    {
+      "nazwa": "Żywiec bezalkoholowe variant białe 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec bezalkoholowe miętaż 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec bezalkoholowe bez % jabłko 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec bezalkoholowe lemonż 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec bezalkoholowe malinaż 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec bezalkoholowe lipa & pigwa 0,0%",
+      "ceny": ["10,50 zł"]
+    },
+    {
+      "nazwa": "Żywiec Jasne Pełne 0,0%",
+      "ceny": ["9,50 zł"]
+    },
+    {
+      "nazwa": "Heineken bezalkoholowy 0%",
+      "ceny": ["9,50 zł"]
+    }
+  ],
+
+  "napoje_zimne": [
+    {
+      "nazwa": "Sok pomarańczowy",
+      "rozmiary": ["200 ml", "1 l"],
+      "ceny": ["7,00 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "Sok grejpfrutowy",
+      "rozmiary": ["1 l"],
+      "ceny": ["12,50 zł"]
+    },
+    {
+      "nazwa": "Sok jabłkowy",
+      "rozmiary": ["200 ml", "1 l"],
+      "ceny": ["7,00 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "Sok czarna porzeczka",
+      "rozmiary": ["200 ml", "1 l"],
+      "ceny": ["7,00 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "Cisowianka (Niegazowana / Perlage / Silnie Gazowana)",
+      "rozmiary": ["200 ml"],
+      "ceny": ["6,50 zł"]
+    },
+    {
+      "nazwa": "Pepsi",
+      "rozmiary": ["200 ml", "500 ml", "1 l"],
+      "ceny": ["7,00 zł", "8,50 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "Mirinda",
+      "rozmiary": ["500 ml", "1 l"],
+      "ceny": ["8,50 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "7 UP",
+      "rozmiary": ["200 ml", "500 ml", "1 l"],
+      "ceny": ["7,00 zł", "8,50 zł", "12,50 zł"]
+    },
+    {
+      "nazwa": "Schweppes",
+      "rozmiary": ["200 ml", "500 ml"],
+      "ceny": ["7,00 zł", "8,50 zł"]
+    },
+    {
+      "nazwa": "Lipton Ice Tea",
+      "rozmiary": ["500 ml"],
+      "ceny": ["8,50 zł"]
+    }
   ]
 }
-,
-"dodatki_do_pizzy": [
-  {
-    "kategoria": "Warzywa i dodatki roślinne",
-    "skladniki": "* pieczarki, pomidor, cebula, czosnek, kukurydza, ananas, szpinak, papryczki jalapeno ostre, papryka, oliwki czarne, oliwki zielone, suszone pomidory, rukola",
-    "ceny": ["2,00 zł", "3,00 zł", "4,00 zł"]
-  },
-  {
-    "kategoria": "Dodatki mięsne",
-    "skladniki": "* szynka, kiełbasa, salami, kurczak, bekon, tuńczyk, szarpana wieprzowina",
-    "ceny": ["3,00 zł", "4,00 zł", "5,00 zł"]
-  },
-  {
-    "kategoria": "Dodatki serowe i sosy",
-    "skladniki": "* ser favita, ser pleśniowy, ser parmezan, zapiekany majonez, sos tabasco",
-    "ceny": ["3,00 zł", "4,00 zł", "5,00 zł"]
-  },
-  {
-    "kategoria": "Dodatki premium",
-    "skladniki": "* ser mozzarella",
-    "ceny": ["5,00 zł", "6,00 zł", "7,00 zł"]
-  }
-]
-,
-"zestawy_obiadowe": [
-  {
-    "nazwa": "Gyros",
-    "skladniki": "Kawałki piersi z kurczaka, frytki lub opiekane cząstki ziemniaczane, mix świeżych warzyw, sos winegret, sos czosnkowy lub ketchup pikantny",
-    "ceny": ["38,00 zł"]
-  },
-  {
-    "nazwa": "Frytki Szefuncia",
-    "skladniki": "Frytki z posypką z kurczaka zapiekane serem mozzarella, świeże warzywa, ketchup pikantny lub sos czosnkowy",
-    "ceny": ["38,00 zł"]
-  },
-  {
-    "nazwa": "Frytki Szefowej",
-    "skladniki": "Frytki z posypką z kurczaka, salami, bekonem zapiekane serem mozzarella, ketchup pikantny lub sos czosnkowy",
-    "ceny": ["38,00 zł"]
-  },
-  {
-    "nazwa": "Frytki z posypką mięsną",
-    "skladniki": "Frytki z posypką z kurczaka, ketchup pikantny lub sos czosnkowy",
-    "ceny": ["30,00 zł"]
-  }
-],
-
-"burgery": [
-  {
-    "nazwa": "Burger z szarpaną wieprzowiną",
-    "skladniki": "Bułka maślana z boczkiem, serem cheddar, sałatą lodową, piklami, czerwoną cebulką, sosem BBQ, majonezem, szarpana wieprzowina",
-    "ceny": ["38,00 zł"]
-  },
-  {
-    "nazwa": "Zestaw Burger z szarpaną wieprzowiną",
-    "skladniki": "Jak wyżej + frytki",
-    "ceny": ["48,00 zł"]
-  }
-]
-,
-"salatki": [
-  {
-    "nazwa": "Sałatka grecka",
-    "skladniki": "Pomidor, ogórek, papryka, cebula, ser favita, oliwki, sałata lodowa, sos winegret",
-    "ceny": ["30,00 zł"]
-  },
-  {
-    "nazwa": "Sałatka CAPITAL",
-    "skladniki": "Kurczak, sałata lodowa, kukurydza, ogórek, papryka, pomidor, sos winegret",
-    "ceny": ["30,00 zł"]
-  }
-],
-
-"pierogi": [
-  {
-    "nazwa": "Pierogi ruskie",
-    "rozmiary": ["Porcja mała (10 szt.)", "Porcja duża (16 szt.)"],
-    "ceny": ["18,00 zł", "26,00 zł"]
-  }
-]
-,
-"dodatki": [
-  {
-    "nazwa": "Frytki",
-    "ceny": ["12,00 zł"]
-  },
-  {
-    "nazwa": "Opiekane cząstki ziemniaczane",
-    "ceny": ["14,00 zł"]
-  },
-  {
-    "nazwa": "Bułeczka czosnkowa",
-    "ceny": ["2,00 zł"]
-  },
-  {
-    "nazwa": "Opakowanie (pizza, frytki, ziemniaczki, zestawy obiadowe, sałatki, pierogi)",
-    "ceny": ["2,00 zł"]
-  }
-],
-
-"sosy_i_oliwa": [
-  {
-    "nazwa": "Sos czosnkowy",
-    "ceny": ["2,00 zł"]
-  },
-  {
-    "nazwa": "Ketchup pikantny",
-    "ceny": ["2,00 zł"]
-  },
-  {
-    "nazwa": "Ostry Sos Piri Piri",
-    "ceny": ["3,00 zł"]
-  },
-  {
-    "nazwa": "Zabójczy Sos Szefa",
-    "ceny": ["4,00 zł"],
-    "uwagi": "Bardzo ostry!"
-  },
-  {
-    "nazwa": "Oliwa z oliwek 50 ml",
-    "ceny": ["6,00 zł"],
-    "uwagi": "Extra virgin"
-  },
-  {
-    "nazwa": "Oliwa z oliwek 80 ml",
-    "ceny": ["7,00 zł"],
-    "uwagi": "Extra virgin"
-  },
-  {
-    "nazwa": "Sos barbecue",
-    "ceny": ["3,00 zł"]
-  }
-],
-
-"piwa_bezalkoholowe": [
-  {
-    "nazwa": "Żywiec bezalkoholowe variant białe 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec bezalkoholowe miętaż 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec bezalkoholowe bez % jabłko 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec bezalkoholowe lemonż 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec bezalkoholowe malinaż 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec bezalkoholowe lipa & pigwa 0,0%",
-    "ceny": ["10,50 zł"]
-  },
-  {
-    "nazwa": "Żywiec Jasne Pełne 0,0%",
-    "ceny": ["9,50 zł"]
-  },
-  {
-    "nazwa": "Heineken bezalkoholowy 0%",
-    "ceny": ["9,50 zł"]
-  }
-],
-
-"napoje_zimne": [
-  {
-    "nazwa": "Sok pomarańczowy",
-    "rozmiary": ["200 ml", "1 l"],
-    "ceny": ["7,00 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "Sok grejpfrutowy",
-    "rozmiary": ["1 l"],
-    "ceny": ["12,50 zł"]
-  },
-  {
-    "nazwa": "Sok jabłkowy",
-    "rozmiary": ["200 ml", "1 l"],
-    "ceny": ["7,00 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "Sok czarna porzeczka",
-    "rozmiary": ["200 ml", "1 l"],
-    "ceny": ["7,00 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "Cisowianka (Niegazowana / Perlage / Silnie Gazowana)",
-    "rozmiary": ["200 ml"],
-    "ceny": ["6,50 zł"]
-  },
-  {
-    "nazwa": "Pepsi",
-    "rozmiary": ["200 ml", "500 ml", "1 l"],
-    "ceny": ["7,00 zł", "8,50 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "Mirinda",
-    "rozmiary": ["500 ml", "1 l"],
-    "ceny": ["8,50 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "7 UP",
-    "rozmiary": ["200 ml", "500 ml", "1 l"],
-    "ceny": ["7,00 zł", "8,50 zł", "12,50 zł"]
-  },
-  {
-    "nazwa": "Schweppes",
-    "rozmiary": ["200 ml", "500 ml"],
-    "ceny": ["7,00 zł", "8,50 zł"]
-  },
-  {
-    "nazwa": "Lipton Ice Tea",
-    "rozmiary": ["500 ml"],
-    "ceny": ["8,50 zł"]
-  }
-]
