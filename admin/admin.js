@@ -1,5 +1,5 @@
 // === KONFIGURACJA GITHUBA ===
-const githubUser = "viacheslavantipov"; // <--- Twój login GitHub
+const githubUser = "viacheslavAntipov"; // <--- Twój login GitHub
 const repoName = "CapitalPizza";        // <--- Twoje repozytorium
 const filePath = "menu.json";            // <--- Plik menu w repo
 
@@ -106,4 +106,5 @@ async function fetchMenuAndUpdate(category, index, newItem, remove = false) {
 }
 
 login();
+
 
