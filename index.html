@@ -168,6 +168,31 @@ section {
   grid-column: 2 / span 3;
 }
 
+/* Burgery — jedna cena */
+.single-price-header {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    background: #fff;
+    padding: 10px 0;
+    font-weight: bold;
+    border-bottom: 2px solid #000;
+}
+
+.single-price {
+    width: 200px;
+    text-align: center;
+}
+
+/* Burgery — 3 ceny jak pizza */
+.pizza-like {
+    grid-template-columns: 1fr 150px 150px 150px !important;
+}
+
+#burgery-wolowina .sticky-subheader {
+    grid-template-columns: 1fr 150px 150px 150px;
+}
+
+
 /* ===== PIEROGI ===== */
 .pierogi .menu-item {
   display: grid;
